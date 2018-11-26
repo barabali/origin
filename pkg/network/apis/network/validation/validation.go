@@ -229,7 +229,7 @@ func ValidateEgressNetworkPolicy(policy *networkapi.EgressNetworkPolicy) field.E
 	}
 
 	if len(policy.Spec.Egress) > networkapi.EgressNetworkPolicyMaxRules {
-		allErrs = append(allErrs, field.Invalid(field.NewPath("spec").Child("egress"), "", ("too many egress rules (max 50)")))
+		allErrs = append(allErrs, field.Invalid(field.NewPath("spec").Child("egress"), "", ("too many egress rules (max 200)")))
 	}
 
 	return allErrs
